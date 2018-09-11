@@ -74,9 +74,12 @@ def test_app_review_post_request_check_module7():
 @pytest.mark.test_app_review_insert_review_module7
 def test_app_review_insert_review_module7():
     assert 'review' in dir(app), 'Have you created the `review` function?'
-
     execute_sql = "execute_sql:INSERT INTO review (review, rating, title, date, status, employer_id) VALUES (?, ?, ?, ?, ?, ?):[{'id': 'review'}, {'id': 'rating'}, {'id': 'title'}, {'id': 'date'}, {'id': 'status'}, {'id': 'employer_id'}]:commit:True"
     assert execute_sql in get_functions(app.review), '`execute_sql` has not been called or has the wrong parameters.'
+
+@pytest.mark.test_app_redirect_to_employer_module7
+def test_app_redirect_to_employer_module7():
+    assert 'review' in dir(app), 'Have you created the `review` function?'
     assert 'redirect' in dir(app), '`redirect` has not been imported from flask.'
     assert 'url_for' in dir(app), '`url_for` has not been imported from flask.'
     assert 'redirect:employer:url_for:employer_id:employer_id' in get_functions(app.review), 'In the `if` are you redirect back to the employer page?'

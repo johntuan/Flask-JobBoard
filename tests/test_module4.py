@@ -59,7 +59,7 @@ def test_show_jobs_macro_for_loop_body_module4():
 @pytest.mark.test_import_macros_module4
 def test_import_macros_module4():
     assert template_exists('_macros'), 'The `_macros.html` template does not exist in the `templates` folder.'
-    assert '_macros.html:show_job:show_jobs:True' == template_import('layout'), 'Have you imported `_macros.html` in `layouts.html`?'
+    assert '_macros.html:show_job:show_jobs:True' == template_import('layout'), 'Have you imported `_macros.html` in `layout.html`?'
 
 @pytest.mark.test_index_template_module4
 def test_index_template_module4():
