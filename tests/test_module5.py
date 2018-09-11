@@ -25,6 +25,7 @@ def test_app_job_route_decorator_module5():
 @pytest.mark.test_app_job_route_parameter_module5
 def test_app_job_route_parameter_module5():
     assert 'job' in dir(app), 'Have you created the `job` function?'
+    assert 'job:job_id:job:id' in template_functions('_macros', 'url_for'), 'Looks like the job title link `href` is incorrect.'
     assert 'job_id' in inspect.getfullargspec(app.job).args, 'Have you added the correct parameters to the `job` function parameters list?'
 
 @pytest.mark.test_app_job_route_data_module5

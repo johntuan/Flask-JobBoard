@@ -24,13 +24,11 @@ def test_show_job_macro_html_module4():
 @pytest.mark.test_show_job_macro_header_module4
 def test_show_job_macro_header_module4():
     assert template_exists('_macros'), 'The `_macros.html` template does not exist in the `templates` folder.'
-    assert 'job:job_id:job:id' in template_functions('_macros', 'url_for'), 'Looks like the job title link `href` is incorrect.'
     assert 'job:title' in template_variables('_macros'), 'Looks like the job title link does not have content.'
 
 @pytest.mark.test_show_job_macro_body_module4
 def test_show_job_macro_body_module4():
     assert template_exists('_macros'), 'The `_macros.html` template does not exist in the `templates` folder.'
-    assert 'employer:employer_id:job:employer_id' in template_functions('_macros', 'url_for'), 'Looks like the job title link `href` is incorrect.'
     assert 'job:employer_name' in template_variables('_macros'), 'Are you showing the employer name?'
     assert 'job:salary' in template_variables('_macros'), 'Are you showing the job salary?'
     assert 'job:description' in template_variables('_macros'), 'Are you showing the job description?'

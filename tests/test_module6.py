@@ -48,6 +48,7 @@ def test_app_employer_route_module6():
     assert 'route:/employer/<employer_id>' in get_functions(app.employer)
     result = [item for item in get_functions(app.employer) if item.startswith('render_template:employer.html')]
     assert len(result) == 1, 'Have you called the `render_template` function.'
+    assert 'employer:employer_id:job:employer_id' in template_functions('_macros', 'url_for'), 'Looks like the job title link `href` is incorrect.'
 
 @pytest.mark.test_app_employer_route_employers_module6
 def test_app_employer_route_employers_module6():
