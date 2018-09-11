@@ -53,6 +53,7 @@ def test_app_execute_sql_module3():
 def test_app_execute_sql_parameters_module3():
     assert 'execute_sql' in dir(app), 'Have you defined a function named `execute_sql`.'
     parameters = inspect.getfullargspec(app.execute_sql)
+    assert len(parameters.args) == 4, 'Have you added parameters to the `execute_sql` function.'
     assert parameters.args[0] == 'sql' and parameters.args[1] == 'values' and parameters.args[2] == 'commit' and parameters.args[3] == 'single', 'Have you added the correct parameters to the `execute_sql` function parameters list?'
     assert parameters.defaults[0] == () and parameters.defaults[1] == False and parameters.defaults[2] == False, 'Do the `args` and `one` parameters have the correct defaults in the `execute_sql` function parameters list?'
 
