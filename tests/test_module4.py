@@ -43,6 +43,7 @@ def test_show_jobs_macro_definition_module4():
 @pytest.mark.test_show_jobs_macro_for_loop_module4
 def test_show_jobs_macro_for_loop_module4():
     assert template_exists('_macros'), 'The `_macros.html` template does not exist in the `templates` folder.'
+    assert 'show_jobs:jobs' in template_macros('_macros'), 'Have you created the `show_jobs` macro and added the correct parameter?'
     html = template_macro_soup('_macros', 'show_jobs')
     div = html.select('div.columns.is-multiline')
     assert len(div) == 1, 'Has a `<div>` with classes of `columns` and `is-multiline` been added to the `show_jobs` macro?'
@@ -51,6 +52,7 @@ def test_show_jobs_macro_for_loop_module4():
 @pytest.mark.test_show_jobs_macro_for_loop_body_module4
 def test_show_jobs_macro_for_loop_body_module4():
     assert template_exists('_macros'), 'The `_macros.html` template does not exist in the `templates` folder.'
+    assert 'show_jobs:jobs' in template_macros('_macros'), 'Have you created the `show_jobs` macro and added the correct parameter?'
     html = template_macro_soup('_macros', 'show_jobs')
     div = html.select('div.column.is-half')
     assert len(div) == 1, 'Has a `<div>` with classes of `column` and `is-half` been added to the `show_jobs` macro `for` loop body?'
