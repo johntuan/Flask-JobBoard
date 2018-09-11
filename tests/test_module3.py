@@ -82,5 +82,7 @@ def test_app_close_connection_module3():
 @pytest.mark.test_app_close_connection_decorator_module3
 def test_app_close_connection_decorator_module3():
     assert 'close_connection' in dir(app), 'Have you defined a function named `close_connection`.'
-    decorator = get_decorators(app.close_connection)['close_connection'][0][0]
+    decorators = get_decorators(app.close_connection)['close_connection']
+    assert len(decorators) == 1, 'Have you added the correct decorator to `close_connection`.'
+    decorator = decorators[0][0]
     assert decorator == 'teardown_appcontext', 'Does `close_connection` have a `teardown_appcontext` decorator?'
