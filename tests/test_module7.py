@@ -87,4 +87,4 @@ def test_app_redirect_to_employer_module7():
 @pytest.mark.test_employer_review_button_module7
 def test_employer_review_button_module7():
     assert template_exists('employer'), 'The `employer.html` template does not exist in the `templates` folder.'
-    assert 'review:employer_id:employer:id' in template_functions('employer', 'url_for'), 'In the `if` are you redirect back to the employer page?'
+    assert 'review:employer_id:employer:id' in template_functions('employer', 'url_for'), 'Does the `Create Review` button have the correct `href`?'
