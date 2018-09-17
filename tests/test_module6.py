@@ -31,7 +31,7 @@ def test_employer_template_reviews_module6():
 def test_employer_template_review_stars_module6():
     assert template_exists('employer'), 'The `employer.html` template does not exist in the `templates` folder.'
     assert '_:range:1:review:rating' in employer_for(), 'Have you created a `for` loop that cycles through `reviews`?'
-    el = template_data('employer').select('.fa.fa_star.checked')
+    el = template_data('employer').select('.fa.fa-star.checked')
     assert len(el) == 1, 'Has the star `<span>` been added to the `employer.html` template?'
 
 @pytest.mark.test_employer_template_review_details_module6
@@ -48,7 +48,7 @@ def test_app_employer_route_module6():
     assert 'route:/employer/<employer_id>' in get_functions(app.employer)
     result = [item for item in get_functions(app.employer) if item.startswith('render_template:employer.html')]
     assert len(result) == 1, 'Have you called the `render_template` function.'
-    assert 'employer:employer_id:job:employer_id' in template_functions('_macros', 'url_for'), 'Looks like the job title link `href` is incorrect.'
+    assert 'employer:employer_id:job:employer_id' in template_functions('_macros', 'url_for'), 'Looks like the job title link `href` is incorrect in `_macros.html.'
 
 @pytest.mark.test_app_employer_route_employers_module6
 def test_app_employer_route_employers_module6():

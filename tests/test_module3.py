@@ -69,6 +69,8 @@ def test_app_execute_sql_results_module3():
     assert 'fetchone' in get_functions(app.execute_sql), 'Have you called the `fetchone` function in `execute_sql`?'
     assert 'commit' in get_functions(app.execute_sql), 'Have you called the `close` function in `execute_sql`?'
     assert 'close' in get_functions(app.execute_sql), 'Have you called the `close` function in `execute_sql`?'
+    assert len(get_statements(app.execute_sql)) >= 0, 'Have created an if statement in the `execute_sql` function?'
+    assert 'results' == get_statements(app.execute_sql)[0]['body/targets/id'], 'Have you assigned the `results` variable to `connection.commit()`?'
     with app.app.app_context():
         results = app.execute_sql('SELECT * FROM job', single=True)
         assert type(results) != list, 'Have you create an if statement to only return one result in `one` is true?'
