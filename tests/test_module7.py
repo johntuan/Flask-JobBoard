@@ -20,6 +20,8 @@ def test_app_review_route_module7():
     assert "route:/employer/<employer_id>/review:methods:[{'s': 'GET'}, {'s': 'POST'}]" or "route:/employer/<employer_id>/review:methods:[{'s': 'POST'}, {'s': 'GET'}]" in get_functions(app.review), 'Do you have a route decorator with the correct URL pattern and methods?'
     result = [item for item in get_functions(app.review) if item.startswith('render_template:review.html:employer_id:employer_id')]
     assert len(result) == 1, 'Have you called the `render_template` function with the correct arguments.'
+    return_values = get_functions_returns(app.review)[0]
+    assert return_values['value/args/s'] == 'review.html' and return_values['value/func/id'] == 'render_template', 'Did you return the `render_template` call?'
 
 @pytest.mark.test_app_review_post_request_check_module7
 def test_app_review_post_request_check_module7():

@@ -29,6 +29,9 @@ def test_app_index_route_function_module1():
     assert 'jobs' in dir(app), 'Have you created the `jobs` function?'
     result = [item for item in get_functions(app.jobs) if item.startswith('render_template:index.html')]
     assert len(result) == 1, 'Have you called the `render_template` function.'
+    return_values = get_functions_returns(app.jobs)[0]
+    assert return_values['value/args/s'] == 'index.html' and return_values['value/func/id'] == 'render_template', 'Did you return the `render_template` call?'
+
 
 @pytest.mark.test_app_route_decoractors_module1
 def test_app_route_decoractors_module1():

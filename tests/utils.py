@@ -56,6 +56,17 @@ def get_functions(source):
     node_iter.visit(ast.parse(inspect.getsource(source)))
     return functions
 
+def get_functions_returns(source):
+    returns = []
+
+    def visit_Return(node):
+        returns.append(build_dict(node))
+
+    node_iter = ast.NodeVisitor()
+    node_iter.visit_Return = visit_Return
+    node_iter.visit(ast.parse(inspect.getsource(source)))
+    return returns
+
 def get_statements(source):
     statements = []
 
