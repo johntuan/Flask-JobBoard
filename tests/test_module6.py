@@ -30,7 +30,7 @@ def test_employer_template_reviews_module6():
 @pytest.mark.test_employer_template_review_stars_module6
 def test_employer_template_review_stars_module6():
     assert template_exists('employer'), 'The `employer.html` template does not exist in the `templates` folder.'
-    assert '_:range:1:review:rating' in employer_for(), 'Have you created a `for` loop that cycles through `reviews`?'
+    assert '_:range:0:review:rating' in employer_for(), 'Have you created a `for` loop that cycles through `reviews`?'
     el = template_data('employer').select('.fa.fa-star.checked')
     assert len(el) == 1, 'Has the star `<span>` been added to the `employer.html` template?'
 
