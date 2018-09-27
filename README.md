@@ -20,7 +20,7 @@ Once that completes, also run this command from the same folder.
 
 Windows
 ```
-\venv\Scripts\activate.bat
+venv\Scripts\activate.bat
 ```
 
 macOS & Linux
