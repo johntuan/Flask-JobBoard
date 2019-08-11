@@ -1,4 +1,4 @@
-from flask import Flash, render_template
+from flask import Flask, render_template
 
 app = Flask(_name_)
 
