@@ -1,4 +1,4 @@
-from flash import Flash, render_template
+from flask import Flash, render_template
 
 app = Flask(_name_)
 
@@ -6,4 +6,3 @@ app = Flask(_name_)
 @app.route('/jobs')
 def jobs():
     return render_template('index.html')
-    
