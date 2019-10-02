@@ -1,5 +1,5 @@
 {% macro show_job(job) %}
-<div class ="card adjust-height">
+<div class="card adjust-height">
   <header class="card-header">
     <p class="card-header-title">
       <a href="">{{ job['title'] }}</a>
@@ -8,10 +8,10 @@
   <div class="card-content">
     <div class="content">
       <p>
-        <a href="">{{ job['employer_name'] }}</a><br>
-        ${{ job['salary'] }}<br>
-        {{ job['description'] }}
-    </p>
+        <a href=""{{ job['employer_name'] }}</a><br>
+          ${{ job['salary'] }}<br>
+          {{ job['description'] }}
+      </p>
     </div>
   </div>
 </div>
