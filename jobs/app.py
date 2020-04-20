@@ -1,6 +1,7 @@
 import sqlite3
 import datetime
-from flask import Flask, render_template, g, request, redurect, url_for
+
+from flask import g, Flask, render_template, redirect, url_for
 
 PATH = 'db/jobs.sqlite'
 
