@@ -44,6 +44,6 @@ pytest
 
 Every time you want to check your work locally you can type that command, and it will report the status of every task in the project.
 
-### Previewing Your Work
+### Previewing The Job Board
 
-You can preview your work by running `flask run` in the root of your fork and then visit`http://localhost:5000` in your browser.
+You can preview the job board by running `flask run` in the root of your fork and then visit`http://localhost:5000` in your browser.
